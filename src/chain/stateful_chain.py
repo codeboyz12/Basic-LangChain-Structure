@@ -1,5 +1,5 @@
 from src.llm.gemini import gemini
-from src.prompt.prompt_template import prompt_template
+from src.prompt.prompt_template import prompt_stateful_template
 from langchain_core.chat_history import InMemoryChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
@@ -12,7 +12,7 @@ def get_message_history(sessionId: str):
 
 def stateful_chain():
     llm = gemini()
-    prompt = prompt_template()
+    prompt = prompt_stateful_template()
 
     chain =  prompt | llm
 
