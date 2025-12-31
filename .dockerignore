@@ -1,0 +1,42 @@
+# 1. Python caches and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 2. Virtual environments (เราจะติดตั้งใน Docker แทน)
+.venv/
+venv/
+env/
+bin/
+lib/
+develop-eggs/
+dist/
+eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+
+# 3. Environment variables (สำคัญมาก: ห้าม Copy .env เข้าไปใน Image)
+.env
+.env.test
+.env.local
+
+# 4. Version control
+.git/
+.gitignore
+
+# 5. IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 6. OS-specific files
+.DS_Store
+Thumbs.db
+
+# 7. Notebook checkpoints (ถ้ามี)
+.ipynb_checkpoints/
