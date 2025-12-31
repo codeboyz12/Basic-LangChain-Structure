@@ -1,22 +1,16 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.messages import HumanMessage
-from dotenv import load_dotenv
+from src.chain.basic_chain import basic_chain
+
+def chat(message):
+    chain = basic_chain()
+    response = chain.invoke({"message": message})
+    return response.content
 
 def main():
-    load_dotenv()
-    
-    llm = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",
-        temperature=0.7
-    )
-
-    # 2. สร้างคำถาม
-    message = HumanMessage(content="ช่วยอธิบายความเจ๋งของ LangChain ใน 3 ข้อสั้นๆ")
-
-    # 3. เรียกใช้งานและแสดงผล
-    print("--- กำลังถาม Gemini ---")
-    response = llm.invoke([message])
-    print(response.content)
+    print("Ready for conversation!")
+    for i in range(5):
+        message = input("User message: ")
+        reply = chat(message)
+        print(f"Gemini: {reply}")
 
 if __name__ == "__main__":
     main()

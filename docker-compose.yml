@@ -1,0 +1,8 @@
+services:
+  basic_langchain:
+    build: .         # เพราะตอนนี้อยู่ที่ root แล้ว
+    container_name: basic_langchain
+    volumes:
+      - ./src:/app/src # เข้าถึง src ได้โดยตรง
+    env_file:
+      - .env
