@@ -1,0 +1,10 @@
+services:
+	basic_langchain:
+		build: .
+		container_name: basic_langchain
+		env_file:
+			- .env
+		volumes:
+			- ./src:/app/src
+		tty: true
+		stdin_open: true
